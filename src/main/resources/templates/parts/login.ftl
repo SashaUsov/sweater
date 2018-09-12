@@ -12,7 +12,7 @@
             <input type="password" name="password" class="form-control" placeholder="Password" />
         </div>
     </div>
-    <#if !isRegisretForm>
+    <#if isRegisretForm>
     <div class="form-group row">
             <label class="col-sm-2 col-form-label">Email:</label>
             <div class="col-sm-6">
