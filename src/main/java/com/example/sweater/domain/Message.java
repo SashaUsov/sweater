@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Message {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     private String text;
     private String tag;
@@ -47,9 +47,9 @@ public class Message {
         this.text = text;
     }
 
-    public Integer getId() { return id; }
+    public Long getId() { return id; }
 
-    public void setId(Integer id) { this.id = id; }
+    public void setId(Long id) { this.id = id; }
 
     public User getAuthor() { return author; }
 
@@ -66,4 +66,3 @@ public class Message {
 
     }
 }
-
