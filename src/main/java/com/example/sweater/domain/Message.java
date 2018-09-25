@@ -6,10 +6,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-
 public class Message {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @NotBlank(message = "Please fill the message")
@@ -33,8 +32,32 @@ public class Message {
         this.author = user;
     }
 
-    public String getAuthorName(){
+    public String getAuthorName() {
         return author != null ? author.getUsername() : "<none>";
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTag() {
@@ -45,30 +68,11 @@ public class Message {
         this.tag = tag;
     }
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public Long getId() { return id; }
-
-    public void setId(Long id) { this.id = id; }
-
-    public User getAuthor() { return author; }
-
     public String getFilename() {
         return filename;
     }
 
     public void setFilename(String filename) {
         this.filename = filename;
-    }
-
-    public void setAuthor(User author) { this.author = author;
-
-
     }
 }
