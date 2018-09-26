@@ -1,4 +1,4 @@
-<#macro login path isRegisretForm>
+<#macro login path isRegisterForm>
 <form action="${path}" method="post">
     <div class="form-group row">
         <label class="col-sm-2 col-form-label"> User Name :</label>
@@ -26,7 +26,7 @@
             </#if>
         </div>
     </div>
-    <#if isRegisretForm>
+    <#if isRegisterForm>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Password:</label>
             <div class="col-sm-6">
@@ -53,18 +53,18 @@
                 </#if>
             </div>
         </div>
-    <div class="col-sm-6">
-        <div class="g-recaptcha" data-sitekey="6Lddn3AUAAAAAC7-rveV_8H4CapOv9OvPL_EJfG0"></div>
-        <#if captchaError??>
-            <div class="alert alert-danger" role="alert">
+        <div class="col-sm-6">
+            <div class="g-recaptcha" data-sitekey="6Lddn3AUAAAAAC7-rveV_8H4CapOv9OvPL_EJfG0"></div>
+            <#if captchaError??>
+                <div class="alert alert-danger" role="alert">
                 ${captchaError}
-            </div>
-        </#if>
-    </div>
+                </div>
+            </#if>
+        </div>
     </#if>
     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-    <#if !isRegisretForm><a href="/registration">Add new user</a></#if>
-    <button class="btn btn-primary" type="submit"><#if isRegisretForm>Create<#else>Sign In</#if></button>
+    <#if !isRegisterForm><a href="/registration">Add new user</a></#if>
+    <button class="btn btn-primary" type="submit"><#if isRegisterForm>Create<#else>Sign In</#if></button>
 </form>
 </#macro>
 
